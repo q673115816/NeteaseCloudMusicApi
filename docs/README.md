@@ -217,6 +217,7 @@
 199. 二维码登录
 200. 话题详情
 201. 话题详情热门动态
+202. 歌单详情动态
 
 ## 安装
 
@@ -1221,8 +1222,15 @@ tags: 歌单标签
 
 **调用例子 :** `/playlist/detail?id=24381616`
 
-返回数据如下图 :
-![歌单详情](https://raw.githubusercontent.com/Binaryify/NeteaseCloudMusicApi/master/static/%E6%AD%8C%E5%8D%95%E8%AF%A6%E6%83%85.png)
+### 歌单详情动态
+
+说明 : 调用后可获取歌单详情动态部分,如评论数,是否收藏,播放数
+
+**必选参数 :** `id` : 歌单 id
+
+**接口地址 :** `/playlist/detail/dynamic`
+
+**调用例子 :** `/playlist/detail/dynamic?id=24381616`
 
 ### 获取音乐 url
 
@@ -2454,13 +2462,11 @@ MV 点赞转发评论数数据
 ### 获取推荐视频
 说明 : 调用此接口, 可获取推荐视频,分页参数只能传入offset 
 
-**必选参数 :** `id`: videoGroup 的 id  
-
 **可选参数 :** `offset`: 默认0
 
-**接口地址 :** `/video/group`
+**接口地址 :** `/video/timeline/recommend`
 
-**调用例子 :** `/video/timeline/recommend`
+**调用例子 :** `/video/timeline/recommend?offset=10`
 
 ### 相关视频
 
@@ -2584,7 +2590,7 @@ type : 地区
 
 参考: https://github.com/Binaryify/NeteaseCloudMusicApi/blob/master/public/cloud.html  
 
-访问地址: http://localhost:3000/qrlogin.html)  
+访问地址: http://localhost:3000/cloud.html)  
 
 支持命令行调用,参考module_example目录下`song_upload.js`
 
